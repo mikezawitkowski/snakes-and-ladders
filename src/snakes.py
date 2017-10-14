@@ -13,7 +13,7 @@ from random import random, randint
 from datetime import datetime
 import os
 import sys
-import multiprocessing as mp
+
 
 
 class Snakes(object):
@@ -231,7 +231,7 @@ def main():
     s.question5()
 
 if __name__ == "__main__":
-    log.basicConfig(level=log.INFO,
+    log.basicConfig(level=log.WARN,
                     format='%(asctime)s %(message)s',
                     datefmt="%b %d %H:%M:%S %Z")
 
