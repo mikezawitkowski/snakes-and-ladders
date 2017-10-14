@@ -121,9 +121,6 @@ class Snakes(object):
         except Exception as ex:
             log.exception(ex)
             import pdb; pdb.set_trace()
-        # oops! After using the sum of the result of turns I realized my error.
-        # I initialized player positions at 1 and that messed up the counting.
-        # Also my use of the `break` statement came too early!
 
         if log.getLogger().getEffectiveLevel() <= 10: # DEBUG
             import pdb; pdb.set_trace()
@@ -140,7 +137,7 @@ class Snakes(object):
                 "number of rolls needed to complete a game?\n")
         print(msg)
 
-        msg = ("\nA. Under these conditions an average of {:.2f} rolls are " +
+        msg = ("A. Under these conditions an average of {:.2f} rolls are " +
                 "needed to complete the game.\n")
         print(msg.format(answer))
 
@@ -176,16 +173,16 @@ class Snakes(object):
                 "start position give the closest to equal odds for both players?\n")
         print(msg)
 
-        msg = ("\nA. Under these conditions the best square for player2 to start " +
-                "is square %s.\n")
+        msg = ("A. Under these conditions the best square for player2 to start " +
+                "is square %s.")
         print(msg % answer)
 
     def question5(self):
-        msg = ("\nQ5. In a different attempot to change the odds of the " +
+        msg = ("\nQ5. In a different attempt to change the odds of the " +
                 "game, instead of staring Player 2 on a different square, " +
                 "you decide to give Player 2 immunity to the first snake " +
                 "that they land on. What is the approximate probability " +
-                "that PLayer 1 wins now?")
+                "that Player 1 wins now?\n")
         print(msg)
 
         results = self.play_10k_games(first_snake_immunity=True)
@@ -201,7 +198,7 @@ class Snakes(object):
         player2_prob = winners.count('player2') / len(winners)
         log.debug("player2 probability: {:.2f}".format(player2_prob))
 
-        msg = ("\nA. Under these conditions Player 2 has a {:.2f} " +
+        msg = ("A. Under these conditions Player 2 has a {:.2f} " +
                 "probability of winning.\n")
         print(msg.format(player2_prob))
 
@@ -234,7 +231,7 @@ def main():
     s.question5()
 
 if __name__ == "__main__":
-    log.basicConfig(level=log.WARN,
+    log.basicConfig(level=log.INFO,
                     format='%(asctime)s %(message)s',
                     datefmt="%b %d %H:%M:%S %Z")
 
